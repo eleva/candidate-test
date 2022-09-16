@@ -32,11 +32,13 @@ Follow these instructions to setup this project:
 
 <h3 style="color:#ce4e43">🚀 Run</h2>
 Just open terminal and execute
+
   ```bash
   candidate-test$ cmd/run
   ```
+
 or on windows
+
    ```bash
    candidate-test$ sh cmd/host
    ```
-
