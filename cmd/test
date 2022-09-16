@@ -1,0 +1,18 @@
+CONTAINER=$(cmd/container-name)
+NAME="_phpfpm";
+CONTAINER_NAME="$CONTAINER$NAME"
+
+if [ "$3" == "" ]
+then
+    if [ "$2" != "" ]
+    then
+        echo "Execute all test tests/$1/$2"
+        docker exec -it -u 1000 $CONTAINER_NAME php ./vendor/bin/phpunit --testdox tests/$1/$2
+    else
+        echo "Execute all test in tests/$1"
+        docker exec -it -u 1000 $CONTAINER_NAME php ./vendor/bin/phpunit --testdox tests/$1
+    fi
+else
+    echo "Execute method tests/$1/$2 method $3"
+    docker exec -it -u 1000 $CONTAINER_NAME php ./vendor/bin/phpunit --testdox --filter $3 tests/$1/$2
+fi

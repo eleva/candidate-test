@@ -1,0 +1,5 @@
+CONTAINER=$(cmd/container-name)
+NAME="_phpfpm";
+CONTAINER_NAME="$CONTAINER$NAME"
+docker exec -it -u 1000 $CONTAINER_NAME composer update
+docker exec -it -u 1000 $CONTAINER_NAME composer install

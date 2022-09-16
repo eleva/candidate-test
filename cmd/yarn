@@ -1,0 +1,5 @@
+CONTAINER=$(cmd/container-name)
+NAME="_nodejs";
+CONTAINER_NAME="$CONTAINER$NAME"
+docker exec -it -u 1000 $CONTAINER_NAME yarn install
+docker exec -it -u 1000 $CONTAINER_NAME yarn encore dev --watch

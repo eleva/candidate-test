@@ -1,0 +1,18 @@
+URI=$(cmd/project-uri)
+URL="http://${URI}"
+
+CONTAINER=$(cmd/container-name);
+FPM='_phpfpm';
+NODE='_nodejs';
+CONTAINER_FPM=$CONTAINER$FPM;
+CONTAINER_NODE=$CONTAINER$NODE;
+
+cd .dev/docker
+docker stop $(docker ps -aq)
+docker-compose build
+docker-compose up -d
+docker exec -it -u 1000 $CONTAINER_FPM composer install
+docker exec -it -u 1000 $CONTAINER_NODE yarn install
+docker exec -it -u 1000 $CONTAINER_NODE yarn encore dev
+
+open $URL

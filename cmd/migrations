@@ -1,0 +1,11 @@
+CONTAINER=$(cmd/container-name)
+NAME="_phpfpm";
+CONTAINER_NAME="$CONTAINER$NAME"
+
+# get not migrated migrations list
+# list migrations | filter for not migrated | get only class name | trim
+MIGRATIONS=$(docker exec -it -u 1000 $CONTAINER_NAME php bin/console doctrine:migrations:list | grep "not migrated" | awk 'FS="|" {print $2}' | awk '{$1=$1;print}')
+
+for MIGRATION in ${MIGRATIONS[@]}; do
+    docker exec -it -u 1000 $CONTAINER_NAME php bin/console doctrine:migrations:execute --up $MIGRATION
+done

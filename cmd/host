@@ -1,0 +1,2 @@
+URI=$(cmd/project-uri)
+echo '127.0.0.1 '$URI | sudo tee -a /etc/hosts

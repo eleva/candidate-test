@@ -1,0 +1,4 @@
+URI=$(grep 'PROJECT_URI' .dev/docker/.env)
+URI=${URI/PROJECT_URI=/''}
+
+echo $URI
