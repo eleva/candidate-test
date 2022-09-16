@@ -1,4 +1,0 @@
-2022/09/12 07:43:59 [emerg] 1#1: invalid number of arguments in "server_name" directive in /etc/nginx/conf.d/default.conf:14
-2022/09/16 10:54:08 [emerg] 1#1: cannot load certificate "/etc/ssl/certs/server.crt": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/etc/ssl/certs/server.crt','r') error:2006D080:BIO routines:BIO_new_file:no such file)
-2022/09/16 10:56:56 [emerg] 1#1: no "ssl_certificate" is defined for the "listen ... ssl" directive in /etc/nginx/conf.d/default.conf:10
-2022/09/16 11:18:20 [emerg] 1#1: cannot load certificate "/etc/ssl/certs/server.crt": PEM_read_bio_X509_AUX() failed (SSL: error:0909006C:PEM routines:get_name:no start line:Expecting: TRUSTED CERTIFICATE)
