@@ -18,8 +18,9 @@ Follow these instructions to setup this project:
      ```bash
      candidate-test$ sh cmd/host
      ```
+   or simply add to your host file 'skeleton.eleva-hosting.it'
 
-6. open terminal and execute the following line to install everything is required
+5. open terminal and execute the following line to install everything is required
      ```bash
      candidate-test$ cmd/run
      ```
@@ -29,6 +30,10 @@ Follow these instructions to setup this project:
      ```
    
    This script will launch docker build, install symfony required packages with composer, execute webpack by encore and run all containers needed.
+   <br>You can start working on this project at:
+   - http://localhost/
+   - http://127.0.0.1/
+   - http://skeleton.eleva-hosting.it/
 
 <h3 style="color:#ce4e43">🚀 Run</h2>
 Just open terminal and execute
