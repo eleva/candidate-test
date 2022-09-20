@@ -45,5 +45,5 @@ Just open terminal and execute
 or on windows
 
    ```bash
-   candidate-test$ sh cmd/host
+   candidate-test$ sh cmd/run
    ```
