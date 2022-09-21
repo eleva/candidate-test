@@ -35,18 +35,18 @@ services:
       - ../..:/home/node/app
     command: sleep infinity
 
-#  mysql:
-#    build:
-#      dockerfile: ./mysql/Dockerfile
-#      context: .
-#      target: dev_mysql
-#    container_name: ${COMPOSE_PROJECT_NAME}_mysql
-#    ports:
-#      - 3306:3306
-#    volumes:
-#      - ./volumes/databases:/var/lib/mysql
-#    environment:
-#      MYSQL_DATABASE: ${COMPOSE_PROJECT_NAME}
-#      MYSQL_USER: ${COMPOSE_PROJECT_NAME}
-#      MYSQL_PASSWORD: ${COMPOSE_PROJECT_NAME}
-#      MYSQL_ROOT_PASSWORD: root
+  mysql:
+    build:
+      dockerfile: ./mysql/Dockerfile
+      context: .
+      target: dev_mysql
+    container_name: ${COMPOSE_PROJECT_NAME}_mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./volumes/databases:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${COMPOSE_PROJECT_NAME}
+      MYSQL_USER: ${COMPOSE_PROJECT_NAME}
+      MYSQL_PASSWORD: ${COMPOSE_PROJECT_NAME}
+      MYSQL_ROOT_PASSWORD: root
